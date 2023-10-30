@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    /* Style CSS personnalisé pour améliorer le design */
+    .book-cover {
+      max-width: 150px; /* Ajustez la largeur maximale selon vos préférences */
+      margin: 0 auto;
+      display: block;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-card {
+      margin-bottom: 20px;
+      transition: box-shadow 0.2s ease-in-out;
+    }
+
+    .book-card:hover {
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .book-details {
+      display: none;
+      background-color: #f8f9fa;
+      padding: 10px;
+      text-align: left;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .book-card:hover .book-details {
+      display: block;
+    }
+  </style>
+  <title>Ma Bibliotheque Magique </title>
+</head>
+<body>
+ <h2>"Un livre est le seul endroit dans vous pouvez explorer des mondes imaginaires sans jamais quitter votre chaise." - Jhumpa Lahiri</h2>
+  <div class="container">
+    <h1>BookMagique : Bibliotheque de Reves</h1>
+    <div class="row">
+      <% books.forEach(book => { %>
+        <div class="col-md-4">
+          <div class="card mb-4 book-card">
+            <img src="<%= book.cover_image %>" class="card-img-top book-cover" alt="Couverture du livre">
+            <div class="card-body">
+              <h5 class="card-title"><%= book.title %></h5>
+              <div class="book-details">
+                <p><strong>Auteur:</strong> <%= book.author %></p>
+                <p><strong>ISBN:</strong> <%= book.isbn %></p>
+                <p><strong>Annee de publication :</strong> <%= new Date(book.date).getFullYear() %></p>
+                <p><strong>Nombre de pages:</strong> <%= book.num_pages %></p>
+                <a href="/edit/<%= book.id %>" class="btn btn-primary">Editer</a>
+                <button class="btn btn-danger delete-button" data-id="<%= book.id %>">Supprimer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+    <a href="/add" class="btn btn-success">Ajouter un Livre</a>
+  </div>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const deleteButtons = document.querySelectorAll(".delete-button");
+
+    deleteButtons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const bookId = event.target.getAttribute("data-id");
+
+        if (confirm("Etes-vous sur de vouloir supprimer ce livre ?")) {
+          fetch(`/delete/${bookId}`, {
+            method: "GET",
+          })
+            .then((response) => {
+              if (response.status === 200) {
+                // Rechargez la page après la suppression
+                location.reload();
+              } else {
+                console.error("Erreur lors de la suppression du livre.");
+              }
+            })
+            .catch((error) => {
+              console.error("Erreur lors de la suppression du livre.", error);
+            });
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>

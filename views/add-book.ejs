@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Ma Bibliothèque Magique - Ajouter un Livre</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Ajouter un Livre</h1>
+    <form action="/add" method="post" enctype="multipart/form-data"> <!-- Ajout de l'attribut enctype -->
+      <!-- Champ de titre -->
+      <div class="form-group">
+        <label for="title">Titre</label>
+        <input type="text" id="title" name="title" class="form-control" required>
+      </div>
+      <!-- Champ d'auteur -->
+      <div class="form-group">
+        <label for "author">Auteur</label>
+        <input type="text" id="author" name="author" class="form-control" required>
+      </div>
+      <!-- Champ d'ISBN -->
+      <div class="form-group">
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" class="form-control" required>
+      </div>
+      <!-- Champ de date de publication -->
+      <div class="form-group">
+        <label for="date">Date de publication</label>
+        <input type="date" id="date" name="date" class="form-control" required>
+      </div>
+      <!-- Champ de nombre de pages -->
+      <div class="form-group">
+        <label for="num_pages">Nombre de pages</label>
+        <input type="number" id="num_pages" name="num_pages" class="form-control" required>
+      </div>
+      <!-- Champ de téléchargement d'image de couverture -->
+      <div class="form-group">
+        <label for="cover_image">Image de Couverture</label>
+        <input type="file" id="cover_image" name="cover_image" class="form-control-file" accept="image/*">
+      </div>
+      <!-- Bouton de soumission -->
+      <button type="submit" class="btn btn-success">Ajouter</button>
+    </form>
+    <a href="/" class="btn btn-primary">Retour a la liste</a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login.css"> <!-- Incluez le fichier CSS -->
+    <title>Connexion</title>
+</head>
+<body>
+
+    <div class="container">
+    
+
+        <div class="inner-container">
+            <div class="form-wrapper is-active">
+                <span class="login">Login</span>
+                <!-- Formulaire de connexion -->
+                <form class="form form-login" method="post" action="/login">
+                    <fieldset>
+                        <legend>Veuillez entrer votre nom d'utilisateur et mot de passe pour vous connecter.</legend>
+                        <div class="input-block">
+                            <label for="login-username">Nom d'utilisateur</label>
+                            <input id="login-username" type="text" name="username" required>
+                        </div>
+                        <div class="input-block">
+                            <label for="login-password">Mot de passe</label>
+                            <input id="login-password" type="password" name="password" required>
+                        </div>
+                    </fieldset>
+                    <button type="submit" class="pushable">
+                        <span class="shadow"></span>
+                        <span class="edge"></span>
+                        <span class="front">
+                            Se connecter
+                        </span>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="/login.js"></script>
+</body>
+</html>

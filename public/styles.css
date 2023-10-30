@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: seagreen;
+    background-image: url('/Try/images/bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container {
+    max-width: 1000px; 
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    animation: glowing 3s infinite;
+    background: linear-gradient(45deg, lightgreen, aqua);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    text-align: center;
+
+
+}
+p {
+    font-family: 'Comic Sans MS', cursive; 
+    font-size: 1.2rem; 
+    color: #333; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+    line-height: 1.4;
+    margin: 10px 0;
+}
+h5 {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.4rem;
+    color: royalblue;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    margin: 10px 0;
+    text-align: center;
+}
+h2 {
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    text-align: center;
+    color: #333;
+    padding: 20px;
+    background-color: #9be844;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+}
+
+h2:hover {
+    transform: scale(1.05);
+}
+.btn-success {
+    background: linear-gradient(45deg, lightgreen, aqua);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:orangered;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.8rem; 
+    text-decoration: none; 
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1;
+    cursor: pointer;
+    display: inline-block;
+    transition: background 0.3s, transform 0.2s, text-shadow 0.3s;
+}
+
+    .btn-success:hover {
+        background: linear-gradient(45deg, aqua, lightgreen);
+        transform: scale(1.1); 
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    }
+
+
+@keyframes glowing {
+    0% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    50% {
+        text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    100% {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+.cover-zoom {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+    .cover-zoom img {
+        transition: transform 0.2s;
+    }
+
+    .cover-zoom:hover img {
+        transform: scale(1.5);
+    }
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: lightgreen;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td {
+    font-family: "Comic Sans MS", cursive;
+}
+thead {
+    background-color: #007bff; 
+    color: mediumturquoise; 
+}
+
+th, td {
+    text-align: center;
+    padding: 10px;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: wheat;
+}
+
+.delete-button {
+
+    color: rosybrown;
+}
+
